@@ -89,20 +89,25 @@ python QueryProcessor.py
 → Documents, embeddings, and inference can stay on the local machine.  
 → Prompt-based grounding helps reduce unsupported answers.
 
-🗂️ Codebase
+⚙️ Technical Workflow
 
-RAG-Assistant-Local/
-├── resources/
-│   └── HRPolicy.pdf       # HR policy document
-├── pdfreader.py           # PDF text extraction
-├── chunker.py             # Text segmentation
-├── embedder.py            # Embedding generation
-├── vectorstore.py         # ChromaDB operations
-├── dataprocessor.py       # Document ingestion
-├── llm.py                 # Local LLM inference
-├── QueryProcessor.py      # Query orchestration
-└── requirements.txt       # Python dependencies
+01 → Ingestion Phase  
+PDF → Extraction → Overlapping Chunks → Embeddings → ChromaDB
 
+Preserves context across chunk boundaries and indexes policy documents for semantic retrieval.
+
+02 → Query Phase
+Question → Query Embedding → Similarity Search → Context → Qwen 2.5 → Answer
+
+Retrieves relevant policy passages before generation, with prompt-based handling for unsupported answers.
+
+🎯 Use Cases
+
+HR policy lookup · Leave & attendance queries · Expense policy search · Unsupported-answer testing
+
+🔒 Key Advantage
+
+Local inference with Ollama, persistent vector storage, and reduced dependence on paid APIs. Hallucinations can still occur, so answers should be verified against the source policy.
 
 
 **Built to explore practical RAG engineering with local models, semantic search, and document-grounded question answering.**
