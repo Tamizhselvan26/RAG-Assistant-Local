@@ -12,37 +12,36 @@ A lightweight Retrieval-Augmented Generation (RAG) system that turns HR policy P
 📦 ChromaDB 
 📃 PyPDF
 
-◈ _**Architecture**
+◈ **Architecture**
 
-
-       HR Policy PDF
-             │
-             ▼
+        HR Policy PDF
+             |
+             v
       Text Extraction
-             │
-             ▼
-   Chunking + Embeddings
-             │
-             ▼
-    ChromaDB Vector Store
-             │
-     User Query ─────────┐
-             │           │
-             ▼           │
-     Query Embedding     │
-             │           │
-             ▼           │
-    Similarity Search ◄──┘
-             │
-             ▼
-     Retrieved Context
-             │
-             ▼
+             |
+             v
+    Chunking + Embeddings
+             |
+             v
+     ChromaDB Vector Store
+             |
+             v
+         User Query
+             |
+             v
+      Query Embedding
+             |
+             v
+      Similarity Search
+             |
+             v
+      Retrieved Context
+             |
+             v
     Qwen 2.5 via Ollama
-             │
-             ▼
+             |
+             v
     Grounded HR Response
-
 
 🚀 Get Started
 
