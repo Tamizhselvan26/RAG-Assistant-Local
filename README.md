@@ -90,16 +90,19 @@ python QueryProcessor.py
 → Prompt-based grounding helps reduce unsupported answers.
 
 🗂️ Codebase
+
 RAG-Assistant-Local/
-├── resources/       → HR policy documents
-├── pdfreader.py     → PDF extraction
-├── chunker.py       → Text segmentation
-├── embedder.py      → Embedding generation
-├── vectorstore.py   → ChromaDB retrieval
-├── dataprocessor.py → Indexing pipeline
-├── llm.py           → Local model inference
-├── QueryProcessor.py→ Query orchestration
-└── requirements.txt
+├── resources/
+│   └── HRPolicy.pdf       # HR policy document
+├── pdfreader.py           # PDF text extraction
+├── chunker.py             # Text segmentation
+├── embedder.py            # Embedding generation
+├── vectorstore.py         # ChromaDB operations
+├── dataprocessor.py       # Document ingestion
+├── llm.py                 # Local LLM inference
+├── QueryProcessor.py      # Query orchestration
+└── requirements.txt       # Python dependencies
+
 
 
 **Built to explore practical RAG engineering with local models, semantic search, and document-grounded question answering.**
